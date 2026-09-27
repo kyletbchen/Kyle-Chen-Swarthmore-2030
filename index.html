@@ -9,153 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0b1220;
-      --bg-elev: #101a2e;
-      --bg-card: #121d33;
-      --grid-line: rgba(120, 170, 255, 0.07);
-      --border: #223353;
-      --border-hover: #3a5580;
-      --text: #e7edf7;
-      --text-dim: #9fb0cc;
-      --text-faint: #6b7ba0;
-      --accent: #5ec8ff;
-      --accent-2: #ffb454;
-      --accent-soft: rgba(94, 200, 255, 0.12);
-      --mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --radius: 10px;
-      --max-width: 1080px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background-color: var(--bg);
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 32px 32px;
-      color: var(--text);
-      font-family: var(--sans);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    ::selection { background: var(--accent-soft); color: var(--text); }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(11, 18, 32, 0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-brand { font-family: var(--mono); font-weight: 600; font-size: 15px; color: var(--text); letter-spacing: 0.02em; }
-    .nav-brand span { color: var(--accent); }
-    .nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
-    .nav-links a { color: var(--text-dim); font-size: 14px; font-weight: 500; }
-    .nav-links a:hover { color: var(--text); text-decoration: none; }
-
-    .hero { padding: 96px 0 72px; border-bottom: 1px solid var(--border); }
-    .eyebrow {
-      font-family: var(--mono); font-size: 13px; color: var(--accent);
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .eyebrow::before {
-      content: ""; width: 8px; height: 8px; background: var(--accent);
-      border-radius: 50%; box-shadow: 0 0 0 3px var(--accent-soft);
-    }
-    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.12; margin: 0 0 20px; letter-spacing: -0.01em; max-width: 780px; }
-    .hero p.lead { font-size: 18px; color: var(--text-dim); max-width: 620px; margin: 0 0 32px; }
-    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px;
-      border-radius: 8px; font-size: 14px; font-weight: 600; font-family: var(--sans);
-      border: 1px solid transparent; cursor: pointer; transition: all 0.15s ease;
-    }
-    .btn:hover { text-decoration: none; }
-    .btn-primary { background: var(--accent); color: #071018; }
-    .btn-primary:hover { background: #7fd4ff; }
-    .btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-    section { padding: 72px 0; border-bottom: 1px solid var(--border); }
-    section:last-of-type { border-bottom: none; }
-    .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 36px; gap: 16px; flex-wrap: wrap; }
-    .section-label { font-family: var(--mono); font-size: 13px; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; }
-    .section-head h2 { font-size: 26px; margin: 4px 0 0; }
-
-    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
-    .about-grid p { color: var(--text-dim); margin: 0 0 16px; }
-    .stat-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
-    .stat-list li { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; background: var(--bg-elev); }
-    .stat-list .stat-label { font-family: var(--mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-    .stat-list .stat-value { font-size: 15px; color: var(--text); }
-
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-    .card {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 24px; display: flex; flex-direction: column;
-      transition: border-color 0.15s ease, transform 0.15s ease;
-    }
-    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .card-tag { font-family: var(--mono); font-size: 11px; color: var(--accent-2); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
-    .card h3 { margin: 0 0 10px; font-size: 19px; line-height: 1.3; }
-    .card p { color: var(--text-dim); font-size: 14.5px; margin: 0 0 16px; flex-grow: 1; }
-
-    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-    .chip {
-      font-family: var(--mono); font-size: 11px; color: var(--text-dim);
-      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border);
-      padding: 4px 9px; border-radius: 999px;
-    }
-    .card-link { font-size: 13.5px; font-weight: 600; color: var(--accent); margin-top: auto; }
-    .card-placeholder-note {
-      font-size: 12px; color: var(--text-faint); font-style: italic;
-      border-top: 1px dashed var(--border); margin-top: 14px; padding-top: 10px;
-    }
-
-    .exp-list { display: flex; flex-direction: column; gap: 18px; }
-    .exp-item {
-      background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent);
-      border-radius: var(--radius); padding: 22px 24px;
-    }
-    .exp-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
-    .exp-head h3 { margin: 0 0 4px; font-size: 18px; }
-    .exp-company { font-size: 14px; color: var(--accent); font-weight: 600; }
-    .exp-meta { text-align: right; font-family: var(--mono); font-size: 12px; color: var(--text-faint); white-space: nowrap; }
-    .exp-item p { color: var(--text-dim); font-size: 14.5px; margin: 0 0 14px; }
-
-    .contact-box {
-      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-      background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;
-    }
-    .contact-box h2 { margin: 0 0 8px; font-size: 24px; }
-    .contact-box p { margin: 0; color: var(--text-dim); }
-    .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    footer {
-      padding: 32px 0 48px; font-family: var(--mono); font-size: 12.5px; color: var(--text-faint);
-      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-    }
-
-    @media (max-width: 760px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .nav-links { gap: 16px; }
-      .hero { padding: 64px 0 48px; }
-      .contact-box { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -242,7 +96,9 @@
           <h2>Work &amp; internships</h2>
         </div>
       </div>
-      <div class="exp-list" id="experience-list"></div>
+      <div class="exp-list" id="experience-list">
+        <!-- Rendered from experience.js by main.js -->
+      </div>
     </div>
   </section>
 
@@ -254,7 +110,9 @@
           <h2>Selected work</h2>
         </div>
       </div>
-      <div class="project-grid" id="project-grid"></div>
+      <div class="project-grid" id="project-grid">
+        <!-- Cards are rendered from projects.js by main.js -->
+      </div>
     </div>
   </section>
 
@@ -281,125 +139,8 @@
     </div>
   </footer>
 
-  <script>
-    const EXPERIENCE = [
-      {
-        company: "Moijey Fine Jewelry and Diamonds",
-        role: "Engineering Intern",
-        period: "Add dates",
-        location: "Add location",
-        summary:
-          "Engineering internship at Moijey Fine Jewelry and Diamonds. Replace this with specifics — e.g. CAD modeling for jewelry design, manufacturing/production engineering, quality control, or process improvement work you did.",
-        tags: ["Add relevant skills"],
-        link: "#",
-        linkText: "Add link (company site, LinkedIn, etc.)",
-        placeholder: true,
-      },
-    ];
-
-    const PROJECTS = [
-      {
-        tag: "Formula SAE — Swarthmore Motorsports",
-        title: "Powertrain Engineering & Sponsorship",
-        summary:
-          "Powertrain Engineer and Head of Sponsorship on Swarthmore's Formula SAE team, working on the drivetrain and engine systems for the team's competition car while leading outreach to secure sponsor funding and in-kind parts support.",
-        tags: ["Powertrain", "SAE Rules Compliance", "Sponsorship & Outreach", "CAD"],
-        link: "#",
-        linkText: "Add link to team page or write-up",
-        placeholder: true,
-      },
-      {
-        tag: "Personal Project",
-        title: "Ultrasonic Scanning Radar",
-        summary:
-          "A rotating ultrasonic rangefinding rig that sweeps a sensor across a field of view and builds a live map of nearby objects, similar in concept to rotating LIDAR units used in robotics.",
-        tags: ["Embedded C", "Ultrasonic Sensing", "Signal Processing", "Motor Control"],
-        link: "#",
-        linkText: "Add link to repo, photos, or demo video",
-        placeholder: true,
-      },
-      {
-        tag: "Personal Project",
-        title: "ESP32 Ethylene-Sensing Fruit Ripener",
-        summary:
-          "An ESP32-based device that monitors ethylene gas concentration to track and accelerate fruit ripening, combining a gas sensor, microcontroller firmware, and an enclosed ripening chamber.",
-        tags: ["ESP32", "Gas Sensing", "IoT", "Firmware"],
-        link: "#",
-        linkText: "Add link to repo, photos, or demo video",
-        placeholder: true,
-      },
-      {
-        tag: "Personal Project",
-        title: "Plasma-Activated Water Generator",
-        summary:
-          "A device that runs a plasma discharge through water to produce plasma-activated water, exploring its use for applications like seed germination and sanitation.",
-        tags: ["High Voltage", "Plasma Physics", "Electronics", "Experimentation"],
-        link: "#",
-        linkText: "Add link to repo, photos, or demo video",
-        placeholder: true,
-      },
-    ];
-
-    function escapeHtml(str) {
-      if (!str) return "";
-      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    }
-    function escapeAttr(str) {
-      return escapeHtml(str).replace(/"/g, "&quot;");
-    }
-
-    function renderExperience() {
-      const list = document.getElementById("experience-list");
-      if (!list) return;
-      list.innerHTML = EXPERIENCE.map((e) => {
-        const chips = (e.tags || []).map((t) => `<span class="chip">${escapeHtml(t)}</span>`).join("");
-        const note = e.placeholder ? `<div class="card-placeholder-note">Draft entry — edit the EXPERIENCE array in this file</div>` : "";
-        return `
-          <article class="exp-item">
-            <div class="exp-head">
-              <div>
-                <h3>${escapeHtml(e.role)}</h3>
-                <div class="exp-company">${escapeHtml(e.company)}</div>
-              </div>
-              <div class="exp-meta">
-                <div class="exp-period">${escapeHtml(e.period)}</div>
-                <div class="exp-location">${escapeHtml(e.location)}</div>
-              </div>
-            </div>
-            <p>${escapeHtml(e.summary)}</p>
-            <div class="chip-row">${chips}</div>
-            <a class="card-link" href="${escapeAttr(e.link)}">${escapeHtml(e.linkText || "Learn more")} &rarr;</a>
-            ${note}
-          </article>
-        `;
-      }).join("");
-    }
-
-    function renderProjects() {
-      const grid = document.getElementById("project-grid");
-      if (!grid) return;
-      grid.innerHTML = PROJECTS.map((p) => {
-        const chips = (p.tags || []).map((t) => `<span class="chip">${escapeHtml(t)}</span>`).join("");
-        const note = p.placeholder ? `<div class="card-placeholder-note">Draft entry — edit the PROJECTS array in this file</div>` : "";
-        return `
-          <article class="card">
-            <div class="card-tag">${escapeHtml(p.tag)}</div>
-            <h3>${escapeHtml(p.title)}</h3>
-            <p>${escapeHtml(p.summary)}</p>
-            <div class="chip-row">${chips}</div>
-            <a class="card-link" href="${escapeAttr(p.link)}">${escapeHtml(p.linkText || "Learn more")} &rarr;</a>
-            ${note}
-          </article>
-        `;
-      }).join("");
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      renderExperience();
-      renderProjects();
-      const yearEl = document.getElementById("year");
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-    });
-  </script>
+  <script src="experience.js"></script>
+  <script src="projects.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

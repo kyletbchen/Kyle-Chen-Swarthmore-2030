@@ -28,6 +28,40 @@ function renderProjects() {
   }).join("");
 }
 
+function renderExperience() {
+  const list = document.getElementById("experience-list");
+  if (!list || typeof EXPERIENCE === "undefined") return;
+
+  list.innerHTML = EXPERIENCE.map((e) => {
+    const chips = (e.tags || [])
+      .map((t) => `<span class="chip">${escapeHtml(t)}</span>`)
+      .join("");
+
+    const note = e.placeholder
+      ? `<div class="card-placeholder-note">Draft entry — edit this role in experience.js</div>`
+      : "";
+
+    return `
+      <article class="exp-item">
+        <div class="exp-head">
+          <div>
+            <h3>${escapeHtml(e.role)}</h3>
+            <div class="exp-company">${escapeHtml(e.company)}</div>
+          </div>
+          <div class="exp-meta">
+            <div class="exp-period">${escapeHtml(e.period)}</div>
+            <div class="exp-location">${escapeHtml(e.location)}</div>
+          </div>
+        </div>
+        <p>${escapeHtml(e.summary)}</p>
+        <div class="chip-row">${chips}</div>
+        <a class="card-link" href="${escapeAttr(e.link)}">${escapeHtml(e.linkText || "Learn more")} &rarr;</a>
+        ${note}
+      </article>
+    `;
+  }).join("");
+}
+
 function escapeHtml(str) {
   if (!str) return "";
   return str
@@ -41,6 +75,7 @@ function escapeAttr(str) {
 }
 
 document.addEventListener("DOMContentLoaded", renderProjects);
+document.addEventListener("DOMContentLoaded", renderExperience);
 
 // Footer year
 document.addEventListener("DOMContentLoaded", () => {
