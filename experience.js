@@ -16,7 +16,7 @@
 
 const EXPERIENCE = [
   {
-    Company: "Garnet Racing - Formula SAE",
+    company: "Garnet Racing - Formula SAE",
     role: "Powertrain Engineering & Sponsorship",
     period: "August 2026 - Present",
     location: "Swarthmore College", 
