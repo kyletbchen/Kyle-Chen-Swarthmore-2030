@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyle Chen — Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio of Kyle Chen — Swarthmore College engineering student, Formula SAE powertrain engineer, and hardware/embedded systems builder." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230b1220%22/><path d=%22M25 70 L50 25 L75 70%22 stroke=%22%235ec8ff%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <div class="nav-brand">Kyle Chen<span>.</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Engineering Student &amp; Hardware Builder</div>
+      <h1>I build hardware, sensors, and systems — from a fruit ripener to a Formula SAE powertrain.</h1>
+      <p class="lead">
+        First-year engineering student at Swarthmore College, Powertrain Engineer
+        and Head of Sponsorship on the Formula SAE team, and a lifelong tinkerer
+        drawn to embedded systems, sensing, and anything that needs a microcontroller.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-label">01 / About</div>
+          <h2>Background</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>
+            I'm an engineering student at Swarthmore College with a focus on
+            hardware and embedded systems — a pull that started in high school
+            and has shown up in every project since, from ultrasonic sensing
+            rigs to plasma physics experiments in the garage.
+          </p>
+          <p>
+            On campus, I'm a Powertrain Engineer and the Head of Sponsorship
+            for Swarthmore's Formula SAE team, splitting my time between
+            drivetrain design work and building the sponsor relationships
+            that fund the car. Outside of coursework and the team, I'm an
+            Eagle Scout, which is where a lot of my project-planning and
+            leadership habits started.
+          </p>
+        </div>
+        <ul class="stat-list">
+          <li>
+            <div class="stat-label">Education</div>
+            <div class="stat-value">B.S. Engineering, Swarthmore College (Class of 2030)</div>
+          </li>
+          <li>
+            <div class="stat-label">Team Role</div>
+            <div class="stat-value">Powertrain Engineer &amp; Head of Sponsorship — Formula SAE</div>
+          </li>
+          <li>
+            <div class="stat-label">Focus Areas</div>
+            <div class="stat-value">Embedded systems, sensing, powertrain, hardware prototyping</div>
+          </li>
+          <li>
+            <div class="stat-label">Recognition</div>
+            <div class="stat-value">Eagle Scout</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-label">02 / Projects</div>
+          <h2>Selected work</h2>
+        </div>
+      </div>
+      <div class="project-grid" id="project-grid">
+        <!-- Cards are rendered from projects.js by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>Let's talk</h2>
+          <p>Open to Summer 2027 engineering internships and collaborations.</p>
+        </div>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:kyle.t.chen@gmail.com">Email me</a>
+          <a class="btn btn-ghost" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+      <span>&copy; <span id="year"></span> Kyle Chen</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
