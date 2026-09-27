@@ -16,6 +16,18 @@
 
 const EXPERIENCE = [
   {
+    Company: "Garnet Racing - Formula SAE",
+    role: "Powertrain Engineering & Sponsorship",
+    period: "August 2026 - Present",
+    location: "Swarthmore College", 
+    summary:
+      "Powertrain Engineer and Head of Sponsorship on Swarthmore's Formula SAE team, working on the drivetrain and engine systems for the team's competition car while leading outreach to secure sponsor funding and in-kind parts support.",
+    tags: ["Powertrain", "SAE Rules Compliance", "Sponsorship & Outreach", "CAD"],
+    link: "#",
+    linkText: "Add link to team page or write-up",
+    placeholder: true,
+  },
+  {
     company: "Moijey Fine Jewelry and Diamonds",
     role: "Engineering Intern",
     period: "Add dates",
