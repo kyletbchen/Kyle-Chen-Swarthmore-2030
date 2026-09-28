@@ -17,7 +17,7 @@
 const EXPERIENCE = [
   {
     company: "Garnet Racing - Formula SAE",
-    role: "Powertrain Engineering & Sponsorship",
+    role: "Powertrain Engineering & Sponsorship Lead",
     period: "August 2026 - Present",
     location: "Swarthmore College",
     summary:
@@ -30,8 +30,8 @@ const EXPERIENCE = [
   {
     company: "Moijey Fine Jewelry and Diamonds",
     role: "Engineering Intern",
-    period: "Add dates",
-    location: "Add location",
+    period: "June 2025 - August 2025",
+    location: "Silver Spring, MD",
     summary:
       "Engineering internship at Moijey Fine Jewelry and Diamonds. Replace this with specifics — e.g. CAD modeling for jewelry design, manufacturing/production engineering, quality control, or process improvement work you did.",
     tags: ["Add relevant skills"],
