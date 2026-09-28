@@ -12,6 +12,7 @@ styles.css      All styling (blueprint/drafting-table theme)
 experience.js   Work/internship data — EDIT THIS to add/change/remove a role
 projects.js     Project data — EDIT THIS to add/change/remove projects
 main.js         Renders cards from experience.js/projects.js — rarely needs editing
+projects/       One detail page per project (photos, video, docs, full write-up)
 ```
 
 ## Editing content
@@ -29,11 +30,37 @@ main.js         Renders cards from experience.js/projects.js — rarely needs ed
   LinkedIn handle, or remove that link if you don't want it.
 - **Colors/fonts**: edit the CSS variables at the top of `styles.css` (`:root`).
 
-## Adding photos or a project write-up page
+## Project detail pages
 
-Drop images into `assets/` and reference them with `<img src="assets/your-photo.jpg">`
-inside a project card, or in a new page (e.g. `projects/radar.html`) that you
-link to from that project's `link` field in `projects.js`.
+Each project card's "View full write-up" button opens a dedicated page in
+`projects/` (in a new tab) with room for a longer description, a photo
+gallery, a video embed, and a documentation list. There's already one page
+per project, linked from `projects.js`:
+
+```
+projects/ultrasonic-scanning-radar.html
+projects/esp32-fruit-ripener.html
+projects/plasma-water-generator.html
+```
+
+To fill one in, open its file and edit directly — it's plain HTML, no build
+step:
+
+- **Overview**: replace the `<em>...</em>` placeholder paragraph with the
+  real story.
+- **Photos**: drop image files into `assets/`, then replace a
+  `<div class="gallery-placeholder">...</div>` block with
+  `<img src="../assets/your-photo.jpg" alt="...">`.
+- **Video**: replace the `<div class="video-placeholder">...</div>` block with
+  the embed snippet shown inside it (works for a YouTube/Vimeo embed URL).
+- **Documentation**: swap the `href="#"` links under **Documentation** for
+  real links (a GitHub repo, a PDF report, CAD files, etc).
+
+To add a detail page for a new project, copy one of the existing files in
+`projects/`, edit its content, and point that project's `link` field in
+`projects.js` at the new filename (e.g. `"projects/my-new-project.html"`).
+Nothing in `index.html` or `main.js` needs to change — project cards already
+open their `link` in a new tab.
 
 ## Deploying to GitHub Pages
 
