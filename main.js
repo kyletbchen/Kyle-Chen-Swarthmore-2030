@@ -21,7 +21,7 @@ function renderProjects() {
         <h3>${escapeHtml(p.title)}</h3>
         <p>${escapeHtml(p.summary)}</p>
         <div class="chip-row">${chips}</div>
-        <a class="card-link" href="${escapeAttr(p.link)}" target="_blank" rel="noopener">${escapeHtml(p.linkText || "Learn more")} &rarr;</a>
+        <a class="card-link" href="${escapeAttr(p.link)}">${escapeHtml(p.linkText || "Learn more")} &rarr;</a>
         ${note}
       </article>
     `;
