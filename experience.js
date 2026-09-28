@@ -25,7 +25,7 @@ const EXPERIENCE = [
     location: "Swarthmore College",
     summary:
       "Powertrain Engineer and Head of Sponsorship on Swarthmore's Formula SAE team, working on the drivetrain and engine systems for the team's competition car while leading outreach to secure sponsor funding and in-kind parts support.",
-    tags: ["Powertrain", "SAE Rules Compliance", "Sponsorship & Outreach", "CAD"],
+    tags: ["SolidWorks", "Slack", "SAE Rules Compliance", "Sponsorship & Outreach"],
     link: "experience/garnet-racing.html",
     linkText: "View full write-up",
     placeholder: true,
@@ -37,7 +37,7 @@ const EXPERIENCE = [
     location: "Silver Spring, MD",
     summary:
       "Engineering internship at Moijey Fine Jewelry and Diamonds. Replace this with specifics — e.g. CAD modeling for jewelry design, manufacturing/production engineering, quality control, or process improvement work you did.",
-    tags: ["Add relevant skills"],
+    tags: ["3Design", "Rhino 8", "Diamond Grading"],
     link: "experience/moijey-fine-jewelry.html",
     linkText: "View full write-up",
     placeholder: true,
