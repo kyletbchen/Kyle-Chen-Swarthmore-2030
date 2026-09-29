@@ -51,4 +51,14 @@ const PROJECTS = [
     linkText: "View full write-up",
     placeholder: true,
   },
+  {
+    tag: "Personal Project",
+    title: "Eagle Scout Project",
+    summary:
+      "Used CAD software to design trail gate schematics and organized a team of 15 volunteers to install gates at two trailheads, improving park accessibility.",
+    tags: ["Community Service", "Woodworking", "Leadership"],
+    link: "projects/eaglescout.html",
+    linkText: "View full write-up",
+    placeholder: true,
+  },
 ];
