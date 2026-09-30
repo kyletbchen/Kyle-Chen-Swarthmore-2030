@@ -468,8 +468,9 @@ footer {
 
 .gallery-grid img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 280px;          
+  object-fit: contain;    
+  background: var(--bg-elev);
   border-radius: var(--radius);
   border: 1px solid var(--border);
   display: block;
