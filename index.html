@@ -142,5 +142,75 @@
   <script src="experience.js"></script>
   <script src="projects.js"></script>
   <script src="main.js"></script>
+
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" aria-label="Close">×</button>
+  <div id="lightbox-content" class="lightbox-content"></div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const content = document.getElementById('lightbox-content');
+
+  function openLightbox(el, type) {
+    content.innerHTML = '';
+    content.className = 'lightbox-content ' + type;
+    content.appendChild(el);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    content.innerHTML = '';   // also stops any playing video
+    document.body.style.overflow = '';
+  }
+
+  // Photos
+  document.querySelectorAll('.gallery-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      const big = document.createElement('img');
+      big.src = img.src;
+      big.alt = img.alt;
+      openLightbox(big, 'is-image');
+    });
+  });
+
+  // Videos: add an expand button to each embed
+  document.querySelectorAll('.video-embed').forEach(wrap => {
+    const media = wrap.querySelector('iframe, video');
+    if (!media) return;
+    const btn = document.createElement('button');
+    btn.className = 'expand-btn';
+    btn.setAttribute('aria-label', 'Expand video');
+    btn.textContent = '⤢';
+    btn.addEventListener('click', () => {
+      const big = media.cloneNode(true);
+      big.setAttribute('allowfullscreen', '');
+      openLightbox(big, 'is-video');
+    });
+    wrap.appendChild(btn);
+  });
+
+  // Documents (desktop only)
+  document.querySelectorAll('.doc-list a').forEach(link => {
+    link.addEventListener('click', e => {
+      if (window.matchMedia('(max-width: 760px)').matches) return;
+      e.preventDefault();
+      const frame = document.createElement('iframe');
+      frame.src = link.href;
+      frame.title = link.textContent;
+      openLightbox(frame, 'is-doc');
+    });
+  });
+
+  // Close on background/X click or Esc
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+
 </body>
 </html>
