@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halloween Hand Launcher — Kyle Chen</title>
+  <meta name="description" content="Project write-up: an automated, sensor-triggered launcher that fires a skeleton hand for a Halloween display." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230b1220%22/><path d=%22M25 70 L50 25 L75 70%22 stroke=%22%235ec8ff%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="nav-brand" href="../index.html">Kyle Chen<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrap detail-wrap">
+    <a class="back-link" href="../index.html#experience">&larr; Back to Experience &amp; Projects</a>
+
+    <div class="detail-head">
+      <div class="card-tag">Personal Project</div>
+      <h1>Halloween Hand Launcher</h1>
+      <div class="chip-row">
+        <span class="chip">Mechanical Design</span>
+        <span class="chip">3D Modeling</span>
+        <span class="chip">Embedded C</span>
+        <span class="chip">Sensors</span>
+      </div>
+    </div>
+
+    <section class="detail-section">
+      <h2>Overview</h2>
+      <p>
+        Every year my family puts together an elaborate Halloween display,
+        and this was my engineering contribution: an automated launcher
+        that fires a skeleton hand into the air to startle
+        trick-or-treaters. After researching ways to launch a lightweight
+        prop safely and repeatably, I designed and 3D-modeled the housing
+        and fabricated a linear track mechanism that uses a set of heavy
+        elastic bands to catapult the hand upward.
+        <br /><br />
+        I wrote the control code that uses a proximity sensor to detect
+        when someone walks up and automatically trigger the launch, along
+        with a return-reset feature that pulls the mechanism back and
+        reloads it automatically so it's ready for the next visitor without
+        anyone resetting it by hand. The whole mechanism is hidden inside a
+        disguised bucket enclosure, with added aesthetic elements to keep
+        the prop concealed until it fires.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Photos</h2>
+      <div class="gallery-grid">
+        <img src="../assets/halloween-launcher-cad.jpg" alt="3D CAD model of the band-driven linear launch track housing" />
+        <img src="../assets/halloween-launcher-interior.jpg" alt="Inside the disguised bucket enclosure, showing the launch mechanism, gearing, and elastic bands" />
+        <img src="../assets/halloween-launcher-build.jpg" alt="Assembling the linear track mechanism on the workbench before final installation" />
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <h2>Video</h2>
+      <div class="video-placeholder">
+        Add a demo video. If it's on YouTube, replace this block with:<br /><br />
+        &lt;div class="video-embed"&gt;&lt;iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <h2>Documentation</h2>
+      <ul class="doc-list">
+        <li><a href="#">Add link to code repo</a></li>
+        <li><a href="#">Add link to 3D model / CAD files</a></li>
+        <li><a href="#">Add link to full write-up or report</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+      <span>&copy; <span id="year"></span> Kyle Chen</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../lightbox.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

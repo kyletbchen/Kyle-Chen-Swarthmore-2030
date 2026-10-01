@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Hydrogen for Cargo Ships — Kyle Chen</title>
+  <meta name="description" content="Project write-up: a solar-powered electrolysis prototype modeling green hydrogen fuel production for cargo ships." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230b1220%22/><path d=%22M25 70 L50 25 L75 70%22 stroke=%22%235ec8ff%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="nav-brand" href="../index.html">Kyle Chen<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrap detail-wrap">
+    <a class="back-link" href="../index.html#experience">&larr; Back to Experience &amp; Projects</a>
+
+    <div class="detail-head">
+      <div class="card-tag">Personal Project</div>
+      <h1>Green Hydrogen for Cargo Ships</h1>
+      <div class="chip-row">
+        <span class="chip">Electrolysis</span>
+        <span class="chip">Renewable Energy</span>
+        <span class="chip">Prototyping</span>
+        <span class="chip">Robotics</span>
+      </div>
+    </div>
+
+    <section class="detail-section">
+      <h2>Overview</h2>
+      <p>
+        Shipping is one of the hardest sectors to decarbonize, which made it
+        an interesting case study for renewable fuel. I researched how
+        electrolysis splits water into hydrogen and oxygen using an electric
+        current, and investigated green hydrogen's potential as a fuel for
+        vehicles, comparing it against other renewable energy sources
+        already in use.
+        <br /><br />
+        To make the idea concrete, I built a small prototype system for a
+        robotics competition that modeled how a cargo ship or port facility
+        could use onboard solar power to electrolyze seawater into hydrogen
+        fuel for industrial use — a scaled-down version of a shipboard
+        fuel-production system. In the setup, a solar panel powers an anode
+        and cathode submerged in water, and the reaction produces visibly
+        measurable volumes of oxygen and hydrogen gas at each electrode.
+        From there, I analyzed the broader sustainability case for green
+        hydrogen, both as a maritime fuel and as a potential fuel source for
+        cars, trains, and planes.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Photos</h2>
+      <div class="gallery-grid">
+        <img src="../assets/green-hydrogen-1.jpg" alt="Solar-powered electrolysis setup showing oxygen and hydrogen collecting at the anode and cathode in a water bath" />
+        <div class="gallery-placeholder">
+          Add a photo
+        </div>
+        <div class="gallery-placeholder">
+          Add a photo
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <h2>Video</h2>
+      <div class="video-placeholder">
+        Add a demo video. If it's on YouTube, replace this block with:<br /><br />
+        &lt;div class="video-embed"&gt;&lt;iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <h2>Documentation</h2>
+      <ul class="doc-list">
+        <li><a href="#">Add link to competition write-up or report</a></li>
+        <li><a href="#">Add link to schematics / CAD files</a></li>
+        <li><a href="#">Add link to research sources</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+      <span>&copy; <span id="year"></span> Kyle Chen</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../lightbox.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
