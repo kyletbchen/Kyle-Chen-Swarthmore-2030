@@ -12,6 +12,7 @@ styles.css      All styling (blueprint/drafting-table theme)
 experience.js   Work/internship data — EDIT THIS to add/change/remove a role
 projects.js     Project data — EDIT THIS to add/change/remove projects
 main.js         Renders cards from experience.js/projects.js — rarely needs editing
+lightbox.js     Click-to-enlarge photo viewer used on every detail page — rarely needs editing
 experience/     One detail page per role (photos, video, docs, full write-up)
 projects/       One detail page per project (photos, video, docs, full write-up)
 ```
@@ -39,8 +40,11 @@ a longer description, a photo gallery, a video embed, and a documentation
 list. There's already one page per entry:
 
 ```
-projects/ultrasonic-scanning-radar.html
 projects/esp32-fruit-ripener.html
+projects/green-hydrogen-cargo-ships.html
+projects/eagle-scout-trail-arches.html
+projects/halloween-hand-launcher.html
+projects/ultrasonic-scanning-radar.html
 projects/plasma-water-generator.html
 experience/garnet-racing.html
 experience/moijey-fine-jewelry.html
@@ -58,7 +62,11 @@ step:
   real story.
 - **Photos**: drop image files into `assets/`, then replace a
   `<div class="gallery-placeholder">...</div>` block with
-  `<img src="../assets/your-photo.jpg" alt="...">`.
+  `<img src="../assets/your-photo.jpg" alt="...">`. Every photo in a
+  `.gallery-grid` automatically opens in a full-size lightbox when clicked
+  (with Prev/Next, arrow-key navigation, and Esc to close) — that's handled
+  by `lightbox.js`, which every detail page already loads, so you don't
+  need to do anything extra when you add a photo.
 - **Video**: replace the `<div class="video-placeholder">...</div>` block with
   the embed snippet shown inside it (works for a YouTube/Vimeo embed URL).
 - **Documentation**: swap the `href="#"` links under **Documentation** for
