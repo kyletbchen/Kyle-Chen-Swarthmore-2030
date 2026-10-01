@@ -23,7 +23,7 @@
 const PROJECTS = [
   {
     tag: "Personal Project",
-    title: "ESP32 Ethylene-Sensing Fruit Ripener",
+    title: "Ethylene Fruit Ripener",
     summary:
       "A prototype device that uses ethylene gas to cut fruit-ripening time from days to under 24 hours, combining a gas sensor, control electronics, and an enclosed ripening chamber — with a companion app in progress.",
     tags: ["ESP32", "Gas Sensing", "IoT", "Firmware"],
@@ -53,7 +53,7 @@ const PROJECTS = [
   },
   {
     tag: "Personal Project",
-    title: "Ultrasonic Scanning Radar",
+    title: "Ultrasonic Radar",
     summary:
       "A 180° ultrasonic scanning radar built from an HC-SR04 sensor on a micro-servo, with a real-time polar-coordinate mapping dashboard and ±1 cm detection accuracy.",
     tags: ["Embedded C", "Ultrasonic Sensing", "Signal Processing", "Motor Control"],
