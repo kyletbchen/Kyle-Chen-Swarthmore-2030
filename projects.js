@@ -41,17 +41,7 @@ const PROJECTS = [
     linkText: "View full write-up",
     placeholder: false,
   },
-  {
-    tag: "Eagle Scout Project",
-    title: "Trail Arches — Locust Grove Nature Center",
-    summary:
-      "Designed, funded, and built a pair of color-coded trailhead gates to fix an accessibility issue at a local nature center, leading a 15-volunteer crew through a multi-day construction build.",
-    tags: ["Project Management", "CAD", "Leadership", "Construction"],
-    link: "projects/eagle-scout-trail-arches.html",
-    linkText: "View full write-up",
-    placeholder: false,
-  },
-  {
+   {
     tag: "Personal Project",
     title: "Halloween Hand Launcher",
     summary:
