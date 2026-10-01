@@ -42,24 +42,29 @@
     <section class="detail-section">
       <h2>Overview</h2>
       <p>
-        An ESP32-based device that monitors ethylene gas concentration to
-        track and accelerate fruit ripening, combining a gas sensor,
-        microcontroller firmware, and an enclosed ripening chamber.
+        Ethylene is the natural plant hormone that drives fruit ripening — it
+        activates the enzymes that soften fruit, convert starches to sugars,
+        and change its color. This project set out to harness that
+        chemistry directly. Research into ethylene exposure showed it can
+        cut ripening time for fruits like bananas, avocados, and mangos from
+        roughly five days down to under 24 hours, and conversations with
+        experts in industrial ethylene-based ripening provided insight into
+        how commercial operations manage the process safely.
         <br /><br />
-        <em>Replace this paragraph with the real story: which gas sensor you
-        used, how you calibrated it, what the ripening chamber looks like,
-        how the ESP32 firmware controls it (e.g. heating, ethylene injection,
-        logging), and what results you saw.</em>
+        From there, I built a working prototype that combines a gas sensor,
+        control electronics, and an enclosed ripening chamber to concentrate
+        and regulate ethylene exposure. I'm now designing a companion app
+        that would let a user enter a fruit's current ripeness and a target
+        ripening time, with the device adjusting conditions inside the
+        chamber to match — with the longer-term goal of extending produce
+        life, cutting spoilage, and reducing household food waste.
       </p>
     </section>
 
     <section class="detail-section">
       <h2>Photos</h2>
       <div class="gallery-grid">
-        <div class="gallery-placeholder">
-          Add a photo: drop a file in /assets/ and replace this block with
-          &lt;img src="../assets/ripener-1.jpg" alt="..."&gt;
-        </div>
+        <img src="../assets/fruit-ripener-1.jpg" alt="Prototype ethylene ripening chamber, an enclosed cabinet with a glass door and temperature display" />
         <div class="gallery-placeholder">
           Add a photo
         </div>
@@ -95,76 +100,9 @@
     </div>
   </footer>
 
+  <script src="../lightbox.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
-  <div id="lightbox" class="lightbox">
-  <button class="lightbox-close" aria-label="Close">×</button>
-  <div id="lightbox-content" class="lightbox-content"></div>
-</div>
-
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const content = document.getElementById('lightbox-content');
-
-  function openLightbox(el, type) {
-    content.innerHTML = '';
-    content.className = 'lightbox-content ' + type;
-    content.appendChild(el);
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    content.innerHTML = '';   // also stops any playing video
-    document.body.style.overflow = '';
-  }
-
-  // Photos
-  document.querySelectorAll('.gallery-grid img').forEach(img => {
-    img.addEventListener('click', () => {
-      const big = document.createElement('img');
-      big.src = img.src;
-      big.alt = img.alt;
-      openLightbox(big, 'is-image');
-    });
-  });
-
-  // Videos: add an expand button to each embed
-  document.querySelectorAll('.video-embed').forEach(wrap => {
-    const media = wrap.querySelector('iframe, video');
-    if (!media) return;
-    const btn = document.createElement('button');
-    btn.className = 'expand-btn';
-    btn.setAttribute('aria-label', 'Expand video');
-    btn.textContent = '⤢';
-    btn.addEventListener('click', () => {
-      const big = media.cloneNode(true);
-      big.setAttribute('allowfullscreen', '');
-      openLightbox(big, 'is-video');
-    });
-    wrap.appendChild(btn);
-  });
-
-  // Documents (desktop only)
-  document.querySelectorAll('.doc-list a').forEach(link => {
-    link.addEventListener('click', e => {
-      if (window.matchMedia('(max-width: 760px)').matches) return;
-      e.preventDefault();
-      const frame = document.createElement('iframe');
-      frame.src = link.href;
-      frame.title = link.textContent;
-      openLightbox(frame, 'is-doc');
-    });
-  });
-
-  // Close on background/X click or Esc
-  lightbox.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-</script>
 </body>
 </html>

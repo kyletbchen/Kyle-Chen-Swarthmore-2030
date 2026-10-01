@@ -42,24 +42,26 @@
     <section class="detail-section">
       <h2>Overview</h2>
       <p>
-        A rotating ultrasonic rangefinding rig that sweeps a sensor across a
-        field of view and builds a live map of nearby objects, similar in
-        concept to rotating LIDAR units used in robotics.
+        This project started as an exploration of how rotating LIDAR units
+        map their surroundings, built instead around a cheap ultrasonic
+        sensor. An HC-SR04 ultrasonic rangefinder is mounted on a micro-servo
+        that continuously sweeps it back and forth across a 180° field of
+        view, taking a distance reading at each angle as it goes.
         <br /><br />
-        <em>Replace this paragraph with the real story: what problem you were
-        solving, how the sweep/scan mechanism works, what microcontroller and
-        sensor you used, what the signal processing pipeline does, and any
-        results or range/accuracy numbers you measured.</em>
+        Those angle-distance pairs are streamed to a laptop in real time,
+        where a Processing/Python dashboard converts each reading into polar
+        coordinates and plots it, building up a live map of nearby objects as
+        the sensor sweeps — the same basic idea behind rotating LIDAR units
+        used in robotics, just built around a much cheaper sensor. Tuning the
+        sensor timing and filtering out noisy readings got the system to
+        ±1 cm detection accuracy.
       </p>
     </section>
 
     <section class="detail-section">
       <h2>Photos</h2>
       <div class="gallery-grid">
-        <div class="gallery-placeholder">
-          Add a photo: drop a file in /assets/ and replace this block with
-          &lt;img src="../assets/radar-1.jpg" alt="..."&gt;
-        </div>
+        <img src="../assets/ultrasonic-radar-1.jpg" alt="HC-SR04 ultrasonic sensor mounted on a micro-servo, wired to an Arduino and breadboard" />
         <div class="gallery-placeholder">
           Add a photo
         </div>
@@ -95,76 +97,9 @@
     </div>
   </footer>
 
+  <script src="../lightbox.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
-  <div id="lightbox" class="lightbox">
-  <button class="lightbox-close" aria-label="Close">×</button>
-  <div id="lightbox-content" class="lightbox-content"></div>
-</div>
-
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const content = document.getElementById('lightbox-content');
-
-  function openLightbox(el, type) {
-    content.innerHTML = '';
-    content.className = 'lightbox-content ' + type;
-    content.appendChild(el);
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    content.innerHTML = '';   // also stops any playing video
-    document.body.style.overflow = '';
-  }
-
-  // Photos
-  document.querySelectorAll('.gallery-grid img').forEach(img => {
-    img.addEventListener('click', () => {
-      const big = document.createElement('img');
-      big.src = img.src;
-      big.alt = img.alt;
-      openLightbox(big, 'is-image');
-    });
-  });
-
-  // Videos: add an expand button to each embed
-  document.querySelectorAll('.video-embed').forEach(wrap => {
-    const media = wrap.querySelector('iframe, video');
-    if (!media) return;
-    const btn = document.createElement('button');
-    btn.className = 'expand-btn';
-    btn.setAttribute('aria-label', 'Expand video');
-    btn.textContent = '⤢';
-    btn.addEventListener('click', () => {
-      const big = media.cloneNode(true);
-      big.setAttribute('allowfullscreen', '');
-      openLightbox(big, 'is-video');
-    });
-    wrap.appendChild(btn);
-  });
-
-  // Documents (desktop only)
-  document.querySelectorAll('.doc-list a').forEach(link => {
-    link.addEventListener('click', e => {
-      if (window.matchMedia('(max-width: 760px)').matches) return;
-      e.preventDefault();
-      const frame = document.createElement('iframe');
-      frame.src = link.href;
-      frame.title = link.textContent;
-      openLightbox(frame, 'is-doc');
-    });
-  });
-
-  // Close on background/X click or Esc
-  lightbox.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-</script>
 </body>
 </html>
