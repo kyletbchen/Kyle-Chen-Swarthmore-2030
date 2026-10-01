@@ -5,7 +5,7 @@
 
 (function () {
   function initLightbox() {
-    const images = Array.from(document.querySelectorAll(".gallery-grid img"));
+    const images = Array.from(document.querySelectorAll(".gallery-grid img, .doc-list img"));
     if (images.length === 0) return;
 
     let currentIndex = 0;
